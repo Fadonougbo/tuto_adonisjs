@@ -5,10 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> AdonisJS - A fully featured web framework for Node.js </title>
 
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 </head>
 <body>
+
+  {{request.url()}}
+  {{route('blog.about',[2])}}
+  <div>
+    <ul>
+      <li>name=>{{name.toUpperCase()}}</li>
+      <li>age=>{{age}}</li>
+      <li>sexe=>{{sexe}}</li>
+    </ul>
+     
+  </div>
+  @let(data={i:100})
+  @include('pages/info')
+  {{'<h1>Essai okok</h1>'}}
+
+  @if(sexe==='m') 
+    <p>homme</p>
+  @else
+    <p>femme</p>
+  @end
+
+  {{ inspect( new Date() ) }}
   
-  <h1> It Works! okok doe ok2 </h1>
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quam. Quaerat laboriosam officia, vel cupiditate repellat rerum expedita explicabo, perspiciatis esse ullam natus. Architecto, culpa consequatur enim a accusamus similique debitis esse ipsum soluta iusto, illum beatae possimus animi sit natus tempore consequuntur? Doloribus obcaecati odit, dignissimos cum eius, veritatis natus eligendi quas ex voluptatem eveniet exercitationem modi, voluptate laudantium temporibus saepe delectus rem consequatur alias ipsa molestiae. Saepe voluptate rerum quae rem fugit, veniam velit quidem laudantium molestiae nostrum magnam illum eos inventore dolorum? Ea, distinctio delectus consequatur, quod amet expedita architecto qui a similique necessitatibus, laborum natus iste!
+  </div>
+  
 </body>
 </html>

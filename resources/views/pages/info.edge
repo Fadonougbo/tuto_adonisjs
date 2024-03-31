@@ -1,0 +1,15 @@
+{{
+    html.classNames([
+    'input',
+    {
+      'input-error': false,
+      'input-disabled': true,
+      'input-large': size === 'large',
+      'input-medium': size === 'medium',
+      'input-rounded': true
+    },
+  ])
+}}
+<em><h1>INFO {{data.i}} </h1></em>
+
+<input type="text" name="" id="" {{ html.attrs({readonly:false}) }} >
