@@ -7,26 +7,30 @@
 |
 */
 
-//import HomeController from '#controllers/home_controller';
+
 import router from '@adonisjs/core/services/router'
-
-
-
-//const HomeController=()=>import('#controllers/home_controller')
-
-router.get('/home','#controllers/home_controller.index').as('home');
-
 
 
 router.group(()=> {
 
-    router.get('about/:id',({route,params})=> {
+    router.get('/:article/:id',({route})=> {
 
         return {
-            current:route?.name,
-            debug:params
+            page:route?.name,
+            path:route?.pattern,
+            home:router.makeUrl('gov.home',{},{prefixUrl:"http://localhost:3333"})
         }
-            
-    }).where('id',/^[0-9]+$/).as('about')
 
-}).prefix('/blog').as('blog')
+    }).as('show')
+
+    router.get('/',({request,route})=> {
+    
+        return {
+            page:route?.name,
+            all:request.all(),
+            path:route?.pattern,
+            show:router.makeUrl('gov.show',{article:'article',id:2},{prefixUrl:"http://localhost:3333"})
+        }
+    }).as('home')
+
+}).prefix('/gov').as('gov')
