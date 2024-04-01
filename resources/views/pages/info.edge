@@ -12,4 +12,12 @@
 }}
 <em><h1>INFO {{data.i}} </h1></em>
 
-<input type="text" name="" id="" {{ html.attrs({readonly:false}) }} >
+{{
+  truncate('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellat accusantium, deleniti deserunt fuga excepturi, ratione repellendus adipisci iusto enim impedit velit, temporibus nihil voluptate sint nostrum id quae distinctio! Perspiciatis atque, iste quos non distinctio tempora molestiae illum pariatur nostrum optio temporibus labore illo, praesentium fugit, consectetur aspernatur aliquid minima totam nesciunt. Dolorum neque mollitia doloribus explicabo reprehenderit tempore, quod quas. Beatae veniam eius cupiditate alias velit sed ab excepturi, earum perspiciatis recusandae similique molestiae corporis consectetur. Iste beatae ad delectus tempora eum ex quae architecto ratione minus, mollitia culpa, consequuntur omnis vel libero? Exercitationem debitis ut natus amet.',
+  18,
+  {
+    suffix:'->'
+  })
+}}
+
+<input type="text" name="" id="" {{ html.attrs({readonly:true}) }} >
